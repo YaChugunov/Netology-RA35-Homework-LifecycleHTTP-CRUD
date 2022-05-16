@@ -3,3 +3,95 @@ p {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
     Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
+
+.form {
+  display: flex;
+  flex-direction: column;
+  width: 40vw;
+  margin: 3rem;
+}
+
+.notes {
+  text-align: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  margin: 3rem;
+}
+
+.note-container {
+  width: 20rem;
+  height: 20rem;
+  font-size: 2rem;
+  margin: 1rem;
+  border: 1px solid #000;
+  position: relative;
+  overflow: auto;
+}
+
+.content {
+  padding: 1rem;
+  overflow-wrap: break-word;
+}
+
+.update,
+.note-close,
+.send {
+  cursor: pointer;
+  background: #fff;
+  border-radius: 50%;
+  border-width: 0;
+  overflow: hidden;
+  transition: 0.2s linear;
+  outline: inherit;
+  margin: 1.5rem;
+  margin-left: 0.3rem;
+  margin-top: 2rem;
+}
+
+.note-close {
+  background: none;
+  border: none;
+  outline: inherit;
+  margin: 0;
+  width: 2vw;
+  margin-left: 38%;
+  position: absolute;
+  width: 35px;
+  height: 35px;
+}
+
+.update:hover,
+.note-close:hover,
+.send:hover {
+  box-shadow: 2px 2px 5px rgba(5, 4, 3, 0.5), 1px 1px 5px rgba(255, 255, 255, 1);
+}
+
+.update:active,
+.note-close:active,
+.send:active {
+  border-radius: 50%;
+  display: inline-block;
+  box-shadow: inset 2px 2px 5px rgba(154, 147, 140, 0.5),
+    1px 1px 5px rgba(255, 255, 255, 1);
+}
+
+span {
+  display: flex;
+  margin-left: 5rem;
+}
+
+img {
+  display: block;
+  padding: 0;
+  margin: 0;
+  width: 20px;
+  height: 25px;
+  margin: 0 auto;
+}
+
+.send {
+  margin: 0;
+  width: 35px;
+  height: 35px;
+}

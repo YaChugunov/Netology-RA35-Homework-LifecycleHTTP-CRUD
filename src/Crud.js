@@ -2,11 +2,11 @@ import React, { useState } from 'react';
 import Notes from './Notes';
 import NoteModel from './NoteModel';
 import nanoid from 'nanoid';
-import Send from '/send.png';
-import Synchronized from '/synchronized.png';
+// import Send from '/send.png';
+// import Synchronized from '/synchronized.png';
 
 export default function Crud() {
-  const [notes, setNotes] = useSstate([]);
+  const [notes, setNotes] = useState([]);
   const [form, setForm] = useState({ content: '' });
 
   const handleSubmit = (e) => {
@@ -66,7 +66,12 @@ export default function Crud() {
         <span>
           <h1>Notes</h1>
           <button type="button" onClick={loadActualNotes} className="update">
-            <img src={Synchronized} alt="update" width="20px" height="25px" />
+            <img
+              src="synchronized.png"
+              alt="update"
+              width="20px"
+              height="25px"
+            />
           </button>
         </span>
         <span>
@@ -77,7 +82,7 @@ export default function Crud() {
             cols="50"
           />
           <button className="send">
-            <img src={Send} alt="send" width="30px" height="25px" />
+            <img src="send.png" alt="send" width="30px" height="25px" />
           </button>
         </span>
       </form>
