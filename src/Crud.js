@@ -2,11 +2,11 @@ import React, { useState } from 'react';
 import Notes from './Notes';
 import NoteModel from './NoteModel';
 import nanoid from 'nanoid';
-import Send from './send.png';
-import Synchronized from './synchronized.png';
+import Send from '/send.png';
+import Synchronized from '/synchronized.png';
 
 export default function Crud() {
-  const [notes, setNotes] = useState([]);
+  const [notes, setNotes] = useSstate([]);
   const [form, setForm] = useState({ content: '' });
 
   const handleSubmit = (e) => {

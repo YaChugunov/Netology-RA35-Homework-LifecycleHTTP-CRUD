@@ -1,5 +1,5 @@
 import React from 'react';
-import Close from './close.png';
+import Close from '/close.png';
 
 export default function Notes({ notes, handleDelete }) {
   return notes.map((note) => (
