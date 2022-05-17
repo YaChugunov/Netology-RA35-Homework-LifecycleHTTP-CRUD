@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
-import Notes from './Notes';
-import NoteModel from './NoteModel';
+import Notes from './ItemList/ItemList';
+import NoteModel from './ItemClass/ItemClass';
 import nanoid from 'nanoid';
 // import Send from '/send.png';
 // import Synchronized from '/synchronized.png';
 
-export default function Crud() {
+export default function Main() {
   const [notes, setNotes] = useState([]);
   const [form, setForm] = useState({ content: '' });
 

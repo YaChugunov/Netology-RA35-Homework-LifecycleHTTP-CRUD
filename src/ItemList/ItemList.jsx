@@ -1,7 +1,6 @@
 import React from 'react';
-// import Close from '/close.png';
 
-export default function Notes({ notes, handleDelete }) {
+export default function ItemList({ notes, handleDelete }) {
   return notes.map((note) => (
     <div className="note-container" key={note.id}>
       <button className="note-close" onClick={() => handleDelete(note.id)}>

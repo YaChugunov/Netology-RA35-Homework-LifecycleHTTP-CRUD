@@ -1,10 +1,10 @@
 import React from 'react';
 import './style.css';
 
-import Crud from './Crud';
+import Main from './Main/Main';
 
 function App() {
-  return <Crud />;
+  return <Main />;
 }
 
 export default App;
