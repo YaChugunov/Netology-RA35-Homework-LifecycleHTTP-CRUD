@@ -3,6 +3,7 @@ import moment from 'moment';
 
 export default function Form(props) {
   const { form, onSubmit, onChange } = props;
+
   const handleChange = (e) => {
     const { name, value } = e.target;
     onChange(name, value);
@@ -16,21 +17,15 @@ export default function Form(props) {
 
   return (
     <>
-      <form action="" onSubmit={handleSubmit}>
-        <div className="form">
-          <div className="formName">
-            <label htmlFor="inputName">Текст карточки</label>
-            <input
-              name="inputName"
-              type="text"
-              placeholder="Временная зона"
-              value={form.inputName}
-              onChange={handleChange}
-            />
-          </div>
-        </div>
-        <div>
-          <button type="submit">Добавить</button>
+      <form onSubmit={handleSubmit} className="form">
+        <div className="notes-new">
+          <textarea
+            value={form.content}
+            onChange={handleChange}
+            rows="5"
+            cols="50"
+          />
+          <button className="btn-send">Добавить</button>
         </div>
       </form>
     </>

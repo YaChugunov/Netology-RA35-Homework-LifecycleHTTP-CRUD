@@ -1,9 +1,6 @@
 import React, { useState } from 'react';
 import ItemList from '../ItemList/ItemList';
 import ItemClass from '../ItemClass/ItemClass';
-import nanoid from 'nanoid';
-
-import sendIcon from '/public/send.png';
 
 export default function Main() {
   const [notes, setNotes] = useState([]);
@@ -69,7 +66,7 @@ export default function Main() {
     <div onLoad={loadNotes}>
       <div className="notes-header">
         <h1>Notes</h1>
-        <button type="button" onClick={loadActualNotes} className="update">
+        <button type="button" onClick={loadActualNotes} className="btn-update">
           Обновить
         </button>
       </div>
@@ -79,10 +76,10 @@ export default function Main() {
           <textarea
             value={form.content}
             onChange={handleChange}
-            rows="7"
+            rows="5"
             cols="50"
           />
-          <button className="notes-send">Добавить</button>
+          <button className="btn-send">Добавить</button>
         </div>
       </form>
 

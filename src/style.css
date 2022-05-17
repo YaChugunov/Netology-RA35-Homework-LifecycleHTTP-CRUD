@@ -1,6 +1,8 @@
 h1,
 h3,
-p {
+p,
+textarea,
+.content {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
     Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
@@ -15,9 +17,18 @@ textarea {
   width: 20rem;
   font-size: 1rem;
   padding: 1rem;
+  border: 1px solid #f1f1f1;
+}
+textarea:hover {
+  border: 1px solid #1063c2;
+}
+textarea:focus {
+  outline: none !important;
+  border: 1px solid #1063c2;
 }
 button {
   height: auto;
+  border: 1px solid #f1f1f1;
 }
 .notes-list {
   display: flex;
@@ -33,33 +44,35 @@ button {
   height: auto;
   font-size: 1rem;
   margin: 1rem 0;
-  border: 1px solid #ccc;
+  margin-right: 1rem;
+  border: 1px solid #f1f1f1;
   position: relative;
   overflow: auto;
 }
 
 .content {
   padding: 1rem;
+  padding-right: 2.5rem;
   overflow-wrap: break-word;
 }
 
-.update,
-.note-close,
-.send {
+.btn-update,
+.btn-close,
+.btn-send {
   cursor: pointer;
 }
-.update {
+.btn-update {
   margin: 1.5rem;
 }
-.note-close {
-  margin: 1.5rem;
+.btn-close {
   background-color: #f1f1f1;
   border: none;
   width: 2rem;
   height: 2rem;
   outline: inherit;
   margin: 0;
-  position: relative;
+  position: absolute;
+  right: 0;
 }
 
 .notes-header {
@@ -69,7 +82,4 @@ button {
 .notes-new {
   display: flex;
   margin-bottom: 1rem;
-}
-
-.send {
 }
