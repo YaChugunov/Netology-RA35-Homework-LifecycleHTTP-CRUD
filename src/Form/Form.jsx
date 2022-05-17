@@ -28,9 +28,9 @@ export default function Form(props) {
               onChange={handleChange}
             />
           </div>
-          <div>
-            <button type="submit">Добавить</button>
-          </div>
+        </div>
+        <div>
+          <button type="submit">Добавить</button>
         </div>
       </form>
     </>

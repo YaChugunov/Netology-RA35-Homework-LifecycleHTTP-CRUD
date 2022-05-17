@@ -67,25 +67,26 @@ export default function Main() {
 
   return (
     <div onLoad={loadNotes}>
-      <span>
+      <div className="notes-header">
         <h1>Notes</h1>
         <button type="button" onClick={loadActualNotes} className="update">
           Обновить
         </button>
-      </span>
+      </div>
+      <h3>New Note</h3>
       <form onSubmit={handleSubmit} className="form">
-        <span>
+        <div className="notes-new">
           <textarea
             value={form.content}
             onChange={handleChange}
             rows="7"
             cols="50"
           />
-          <button className="send">+</button>
-        </span>
+          <button className="notes-send">Добавить</button>
+        </div>
       </form>
 
-      <div className="notes">
+      <div className="notes-list">
         <ItemList notes={notes} handleDelete={handleDelete} />
       </div>
     </div>
