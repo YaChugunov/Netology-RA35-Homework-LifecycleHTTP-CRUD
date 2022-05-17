@@ -5,8 +5,8 @@ export default function Form(props) {
   const { form, onSubmit, onChange } = props;
 
   const handleChange = (e) => {
-    const { value } = e.target;
-    onChange(value);
+    const { name, value } = e.target;
+    onChange(name, value);
   };
   const handleSubmit = (e) => {
     e.preventDefault();
