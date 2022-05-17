@@ -67,18 +67,13 @@ export default function Main() {
 
   return (
     <div onLoad={loadNotes}>
+      <span>
+        <h1>Notes</h1>
+        <button type="button" onClick={loadActualNotes} className="update">
+          Обновить
+        </button>
+      </span>
       <form onSubmit={handleSubmit} className="form">
-        <span>
-          <h1>Notes</h1>
-          <button type="button" onClick={loadActualNotes} className="update">
-            <img
-              src="synchronized.png"
-              alt="update"
-              width="20px"
-              height="25px"
-            />
-          </button>
-        </span>
         <span>
           <textarea
             value={form.content}
