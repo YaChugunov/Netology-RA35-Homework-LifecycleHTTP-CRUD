@@ -3,7 +3,7 @@ import ItemList from '../ItemList/ItemList';
 import ItemClass from '../ItemClass/ItemClass';
 import nanoid from 'nanoid';
 
-import { sendIcon } from '/public/send.png';
+import sendIcon from '/public/send.png';
 
 export default function Main() {
   const [notes, setNotes] = useState([]);
@@ -11,6 +11,8 @@ export default function Main() {
 
   const { nanoid } = require('nanoid');
   const ID = nanoid();
+
+  var sendIcon = '/public/send.png';
 
   const handleSubmit = (e) => {
     // добавление
@@ -84,9 +86,7 @@ export default function Main() {
             rows="7"
             cols="50"
           />
-          <button className="send">
-            <img src={sendIcon} alt="send" width="30px" height="25px" />
-          </button>
+          <button className="send">+</button>
         </span>
       </form>
 

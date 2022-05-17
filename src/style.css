@@ -6,9 +6,35 @@ p {
 
 .form {
   display: flex;
-  flex-direction: column;
-  width: 40vw;
-  margin: 3rem;
+  align-items: end;
+  width: 100%;
+  margin-bottom: 20px;
+}
+label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+input {
+  height: 32px;
+  font-size: 14px;
+}
+input[type='text'][name='inputName'] {
+  height: 32px;
+}
+input[type='number'][name='inputTimezone'] {
+  width: 120px;
+  text-align: center;
+}
+button {
+  height: 38px;
+}
+
+.formName {
+  margin: 0 2px;
+}
+.formTimezone {
+  margin: 0 2px;
 }
 
 .notes {
@@ -39,14 +65,9 @@ p {
 .send {
   cursor: pointer;
   background: #fff;
+  border-width: 1;
   border-radius: 50%;
-  border-width: 0;
-  overflow: hidden;
-  transition: 0.2s linear;
-  outline: inherit;
   margin: 1.5rem;
-  margin-left: 0.3rem;
-  margin-top: 2rem;
 }
 
 .note-close {
@@ -59,21 +80,6 @@ p {
   position: absolute;
   width: 35px;
   height: 35px;
-}
-
-.update:hover,
-.note-close:hover,
-.send:hover {
-  box-shadow: 2px 2px 5px rgba(5, 4, 3, 0.5), 1px 1px 5px rgba(255, 255, 255, 1);
-}
-
-.update:active,
-.note-close:active,
-.send:active {
-  border-radius: 50%;
-  display: inline-block;
-  box-shadow: inset 2px 2px 5px rgba(154, 147, 140, 0.5),
-    1px 1px 5px rgba(255, 255, 255, 1);
 }
 
 span {
@@ -91,7 +97,6 @@ img {
 }
 
 .send {
-  margin: 0;
   width: 35px;
   height: 35px;
 }
