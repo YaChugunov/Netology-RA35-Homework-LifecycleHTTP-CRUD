@@ -11,33 +11,29 @@ p {
   width: 100%;
   margin-bottom: 20px;
 }
-label {
-  display: block;
-  margin-bottom: 5px;
-  font-weight: bold;
-}
-input {
-  height: 32px;
-  font-size: 14px;
+textarea {
+  width: 20rem;
+  font-size: 1rem;
+  padding: 1rem;
 }
 button {
   height: auto;
 }
-
-.notes {
-  text-align: center;
+.notes-list {
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-start;
   margin: 3rem;
+  margin-left: 0;
 }
 
 .note-container {
   width: 20rem;
-  height: 20rem;
-  font-size: 2rem;
+  min-height: 3rem;
+  height: auto;
+  font-size: 1rem;
   margin: 1rem 0;
-  border: 1px solid #000;
+  border: 1px solid #ccc;
   position: relative;
   overflow: auto;
 }
@@ -55,22 +51,15 @@ button {
 .update {
   margin: 1.5rem;
 }
-.send {
-}
 .note-close {
   margin: 1.5rem;
-}
-
-.note-close {
-  background: none;
+  background-color: #f1f1f1;
   border: none;
+  width: 2rem;
+  height: 2rem;
   outline: inherit;
   margin: 0;
-  width: 2vw;
-  margin-left: 38%;
-  position: absolute;
-  width: 35px;
-  height: 35px;
+  position: relative;
 }
 
 .notes-header {
