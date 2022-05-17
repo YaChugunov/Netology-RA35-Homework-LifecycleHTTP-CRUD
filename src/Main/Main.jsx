@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
-import ItemList from './ItemList/ItemList';
-import ItemClass from './ItemClass/ItemClass';
+import ItemList from '../ItemList/ItemList';
+import ItemClass from '../ItemClass/ItemClass';
 import nanoid from 'nanoid';
+
+import { sendIcon } from '/public/send.png';
 
 export default function Main() {
   const [notes, setNotes] = useState([]);
@@ -13,7 +15,7 @@ export default function Main() {
   const handleSubmit = (e) => {
     // добавление
     e.preventDefault();
-    const newNote = new NoteModel(ID, form.content);
+    const newNote = new ItemClass(ID, form.content);
     setNotes((prevNotes) => [...prevNotes, newNote]);
     setForm({ content: '' });
   };
@@ -83,13 +85,13 @@ export default function Main() {
             cols="50"
           />
           <button className="send">
-            <img src="send.png" alt="send" width="30px" height="25px" />
+            <img src={sendIcon} alt="send" width="30px" height="25px" />
           </button>
         </span>
       </form>
 
       <div className="notes">
-        <Notes notes={notes} handleDelete={handleDelete} />
+        <ItemList notes={notes} handleDelete={handleDelete} />
       </div>
     </div>
   );
