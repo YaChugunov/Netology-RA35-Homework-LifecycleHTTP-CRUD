@@ -9,10 +9,13 @@ export default function Crud() {
   const [notes, setNotes] = useState([]);
   const [form, setForm] = useState({ content: '' });
 
+  const { nanoid } = require('nanoid');
+  const ID = nanoid();
+
   const handleSubmit = (e) => {
     // добавление
     e.preventDefault();
-    const newNote = new NoteModel(nanoid(), form.content);
+    const newNote = new NoteModel(ID, form.content);
     setNotes((prevNotes) => [...prevNotes, newNote]);
     setForm({ content: '' });
   };
