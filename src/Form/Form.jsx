@@ -5,14 +5,14 @@ export default function Form(props) {
   const { form, onSubmit, onChange } = props;
 
   const handleChange = (e) => {
-    const { name, value } = e.target;
-    onChange(name, value);
+    const { value } = e.target;
+    onChange(value);
   };
   const handleSubmit = (e) => {
     e.preventDefault();
-    (form.inputTimezone && form.inputTimezone) !== ''
+    (form.content && form.content) !== ''
       ? onSubmit()
-      : alert('Заполните оба поля!');
+      : alert('Вы не заполнили карточку');
   };
 
   return (

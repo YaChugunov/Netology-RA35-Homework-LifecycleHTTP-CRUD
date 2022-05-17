@@ -3,7 +3,7 @@ import ItemList from '../ItemList/ItemList';
 import ItemClass from '../ItemClass/ItemClass';
 
 export default function Main() {
-  const [notes, setNotes] = useState([]);
+  const [items, setItems] = useState([]);
   const [form, setForm] = useState({ content: '' });
 
   const { nanoid } = require('nanoid');
@@ -14,8 +14,8 @@ export default function Main() {
   const handleSubmit = (e) => {
     // добавление
     e.preventDefault();
-    const newNote = new ItemClass(ID, form.content);
-    setNotes((prevNotes) => [...prevNotes, newNote]);
+    const newItem = new ItemClass(ID, form.content);
+    setItems((prevItems) => [...prevItems, newItem]);
     setForm({ content: '' });
   };
 
@@ -24,16 +24,16 @@ export default function Main() {
     setForm((prev) => ({ ...prev, content: value }));
   };
 
-  const loadActualNotes = () => {
+  const loadActualItems = () => {
     // обновление
     fetch(`${process.env.REACT_APP_API_URL}`)
       .then((response) => response.json())
       .then((arr) =>
-        arr.map((el) => setNotes((prevNotes) => [...prevNotes, el]))
+        arr.map((el) => setItems((prevItems) => [...prevItems, el]))
       );
   };
 
-  const loadNotes = () => {
+  const loadItems = () => {
     // загрузка
     console.log(process.env.REACT_APP_API_URL);
     fetch(`${process.env.REACT_APP_API_URL}`, {
@@ -42,7 +42,7 @@ export default function Main() {
     })
       .then((response) => response.json())
       .then((arr) =>
-        arr.map((el) => setNotes((prevNotes) => [...prevNotes, el]))
+        arr.map((el) => setItems((prevItems) => [...prevItems, el]))
       );
   };
 
@@ -58,15 +58,15 @@ export default function Main() {
       })
       .catch((err) => console.log(`Err ${err}`))
       .then((id) =>
-        setNotes((prevNotes) => prevNotes.filter((o) => o.id !== id))
+        setItems((prevItems) => prevItems.filter((o) => o.id !== id))
       );
   };
 
   return (
-    <div onLoad={loadNotes}>
+    <div onLoad={loadItems}>
       <div className="notes-header">
         <h1>Notes</h1>
-        <button type="button" onClick={loadActualNotes} className="btn-update">
+        <button type="button" onClick={loadActualItems} className="btn-update">
           Обновить
         </button>
       </div>
@@ -84,7 +84,7 @@ export default function Main() {
       </form>
 
       <div className="notes-list">
-        <ItemList notes={notes} handleDelete={handleDelete} />
+        <ItemList items={items} handleDelete={handleDelete} />
       </div>
     </div>
   );

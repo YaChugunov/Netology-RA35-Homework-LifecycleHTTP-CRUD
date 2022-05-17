@@ -1,12 +1,12 @@
 import React from 'react';
 
-export default function ItemList({ notes, handleDelete }) {
-  return notes.map((note) => (
-    <div className="note-container" key={note.id}>
-      <button className="btn-close" onClick={() => handleDelete(note.id)}>
+export default function ItemList({ items, handleDelete }) {
+  return items.map((item) => (
+    <div className="note-container" key={item.id}>
+      <button className="btn-close" onClick={() => handleDelete(item.id)}>
         X
       </button>
-      <div className="content">{note.content}</div>
+      <div className="content">{item.content}</div>
     </div>
   ));
 }
