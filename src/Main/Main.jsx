@@ -1,9 +1,7 @@
 import React, { useState } from 'react';
-import Notes from './ItemList/ItemList';
-import NoteModel from './ItemClass/ItemClass';
+import ItemList from './ItemList/ItemList';
+import ItemClass from './ItemClass/ItemClass';
 import nanoid from 'nanoid';
-// import Send from '/send.png';
-// import Synchronized from '/synchronized.png';
 
 export default function Main() {
   const [notes, setNotes] = useState([]);
