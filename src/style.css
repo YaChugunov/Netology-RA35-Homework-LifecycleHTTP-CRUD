@@ -20,11 +20,11 @@ textarea {
   border: 1px solid #f1f1f1;
 }
 textarea:hover {
-  border: 1px solid #1063c2;
+  border: 1px solid #ccc;
 }
 textarea:focus {
   outline: none !important;
-  border: 1px solid #1063c2;
+  border: 1px solid #ccc;
 }
 button {
   height: auto;
